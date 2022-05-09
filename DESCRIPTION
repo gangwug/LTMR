@@ -1,0 +1,17 @@
+Package: LTMR
+Title: An in silico genome-wide screen for circadian clock strength
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Gang",
+           family = "Wu",
+           role = c("aut", "cre"),
+           email = "wggucas@gmail.com",
+           comment = c(ORCID = "0000-0002-4526-2034"))
+Description: LTM is an in silico screen to infer genetic influences on circadian clock function. LTM uses natural variation in gene expression data and directly links gene expression variation to clock strength independent of longitudinal data. 
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Depends: 
+    R (>= 2.10)
