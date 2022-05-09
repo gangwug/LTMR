@@ -1,13 +1,6 @@
 ######==========================run the demo using the example data
 rm(list=ls())
-library(ape)
-library(dplyr)
-library(tidyr)
-library(readr)
-library(parallel)
-library(preprocessCore)
-source("../R/LTMRsub.R")
-source("../R/LTMRmain.R")
+library(LTMR)
 ######load the example data
 load("../data/mClockBenchD.rda")
 load("../data/exampleD.rda")
