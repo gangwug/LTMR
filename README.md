@@ -37,11 +37,8 @@ LTMdish(dishL = list("Q4" = outCookA, "Q5" = outCookB), targetMeasures = c("zman
 1. LTM screened genes in the complex tissues (eg., tumors) may pick other stronger factors (eg., fractions of non-cancer cells) than clock-coupled pathways. Considering multiple factors may influence the clock strength in human population datasets, non-biological factors (eg., batch effects) may also affect the interpretation of LTM screening results. It is important to know the dataset before applying LTM. 
 2. The genes identified by LTM are based on correlations. The strong correlation is not the direct evidence of causal effect. Therefore, the LTM predicted clock-coupled pathways need experimental validation and/or literature evidence. 
 3. LTM can not screen genes correlated with the period and phase variation of the circadian clock. 
-4. Ranking samples by the gene expression are strongly influenced by the circadian phase for strong cyclers, which makes it difficult to accurately quantify the clock strength when separating samples by circadian phase. So LTM may be biased to non-cycling genes. 
-
-### Transcriptome data format
-
-The intesntiy values are suggested for array data. For RNA-seq data, we suggest to use read-normalized values (e.g., TPM, FPKM or RPKM; TPM is preferred) instead of the raw read counts. 
+4. Ranking samples by the gene expression are strongly influenced by the circadian phase for strong cyclers, which makes it difficult to accurately quantify the clock strength when separating samples by circadian phase. So LTM may be biased to non-cycling genes.
+5. The intesntiy values are suggested for array data. For RNA-seq data, we suggest to use read-normalized values (e.g., TPM, FPKM or RPKM; TPM is preferred) instead of the raw read counts. 
 
 ## More information
 
