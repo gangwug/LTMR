@@ -42,4 +42,4 @@ LTMdish(dishL = list("Q4" = outCookA, "Q5" = outCookB), targetMeasures = c("zman
 
 ## More information
 
-Wu G, Ruben MD, Francey LJ,  Lee Y, Anafi RC, Hogenesch JB. An in silico genome-wide screen for circadian clock strength in human samples. bioRxiv, 2022, https://www.biorxiv.org/content/10.1101/2022.05.10.491250v1.
+Wu G, Ruben MD, Francey LJ,  Lee Y, Anafi RC, Hogenesch JB. An in silico genome-wide screen for circadian clock strength in human samples. bioRxiv, 2022, https://www.biorxiv.org/content/10.1101/2022.05.10.491250v2.
