@@ -40,6 +40,8 @@ LTMdish(dishL = list("Q4" = outCookA, "Q5" = outCookB), targetMeasures = c("zman
 4. Ranking samples by the gene expression are strongly influenced by the circadian phase for strong cyclers, which makes it difficult to accurately quantify the clock strength when separating samples by circadian phase. So LTM may be biased to non-cycling genes.
 5. The intesntiy values are suggested for array data. For RNA-seq data, we suggest to use read-normalized values (e.g., TPM, FPKM or RPKM; TPM is preferred) instead of the raw read counts. 
 6. Part of the method is fairly ad hoc (distribution of phases in the groups, sequential averaging, averaging of R values). This might create biases and needs to be fixed in the future version of LTMR.
+7. The number of quantiles depends first and foremost on the total number of individual samples in the dataset. We suggest ~300 samples as a minimal requirement for LTM. 
+8. At least 30 samples (minimal number of samples for nCV and mantel’s zstat calculation) is suggested for each quantile group. With samples significantly larger than 300, we recommend increasing the number of quantiles (more than 10).
 
 ## More information
 
