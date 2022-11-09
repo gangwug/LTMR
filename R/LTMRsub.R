@@ -139,7 +139,8 @@ topEnsemF <- function(inDF, species = "Hs") {
       as.data.frame() %>%
       dplyr::select(-ensembl_gene_id) %>%
       dplyr::distinct() %>%
-      dplyr::right_join(topD, by = c("hgnc_symbol" = "gname") ) %>%
+    ### minor revision here, replace 'c("hgnc_symbol" = "gname")' with 'c("hgnc_symbol" = "geneSym")'
+      dplyr::right_join(topD, by = c("hgnc_symbol" = "geneSym") ) %>%
       dplyr::filter(!is.na(uniGeneID))
   }
   if (species == "Mm") {
