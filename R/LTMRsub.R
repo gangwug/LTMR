@@ -131,8 +131,9 @@ topEnsemF <- function(inDF, species = "Hs") {
   if (species == "Hs") {
     ensembl = biomaRt::useEnsembl(biomart="ensembl", dataset="hsapiens_gene_ensembl")
     #listAttributes(ensembl)
+    ### minor revision here, replace 'topD$gname' with 'topD$geneSym'
     ensemD = biomaRt::getBM(attributes=c('ensembl_gene_id', 'hgnc_symbol'), filters = 'hgnc_symbol',
-                            values = topD$gname, mart = ensembl, uniqueRows = TRUE) %>%
+                            values = topD$geneSym, mart = ensembl, uniqueRows = TRUE) %>%
       dplyr::group_by(hgnc_symbol) %>%
       dplyr::mutate(uniGeneID = paste(ensembl_gene_id, collapse = "_")) %>%
       as.data.frame() %>%
