@@ -202,7 +202,7 @@ LTMheat <- function(heatD, benchD, cvGenes, outFileSymbol = NULL, outDir = NULL,
   dataD = as.data.frame(heatD)
   colnames(dataD)[1] = "geneSym"
   if ( nrow(dataD) != length(unique(dataD$geneSym)) ) {
-    stop( c("Please make sure that there is no duplciate names in the first column of each data frame of the 'heatL' data frame list.\n") );
+    stop( c("Please make sure that there is no duplciate names in the first column of each data frame of the 'heatD' data frame list.\n") );
   }
   rownames(dataD) = dataD$geneSym
   cnames = colnames(dataD)
