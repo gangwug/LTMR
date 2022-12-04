@@ -447,8 +447,11 @@ LTMwash <- function(washDir, washKey = NULL, washWay = NULL, checkWashList = FAL
   delFiles = paste0(washDir, "/", delFiles)
   if (length(delFiles) & (washWay == "delete") ) {
     zflag = file.remove(delFiles)
-  }
-  if (checkWashList) {
+    if (checkWashList) {
     return(cbind(delFiles, zflag))
+    }
+  }
+  else {
+    print("No file is deleted.\n")
   }
 }
