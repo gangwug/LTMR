@@ -181,7 +181,7 @@ LTMcut <- function(cutD = NULL, exemptGenes = NULL, minExp = -1e10, minFold = 1,
 #' @param outDir a character string. The name of directory used to store output file.
 #' @param qnum a numeric value. The number of quantile groups when separate samples based on expression level gene by gene.
 #' @param nCores an integer. Number of cores to use. For parallel computing, set \code{nCores} a integer larger than 1.
-#' @param logical. If TRUE, time used during the analysis will be released on the screen.
+#' @param releaseNote a logical value. If TRUE, time used during the analysis will be released on the screen.
 #' @return a list with screen and sample data frame.
 #' @examples
 #' ## please refer to the webpage of LTMR package
