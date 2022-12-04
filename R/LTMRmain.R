@@ -442,7 +442,7 @@ LTMmeta <- function(metaL, fileName = NULL, outDir = NULL) {
 #' @export
 
 ######LTMwash(delete or compress temporary files)
-LTMwash <- function(washDir, washKey = NULL, checkWashList = FALSE) {
+LTMwash <- function(washDir, washKey = NULL, washWay = NULL, checkWashList = FALSE) {
   delFiles = grep(washKey, dir(washDir), value = TRUE)
   delFiles = paste0(washDir, "/", delFiles)
   if (length(delFiles) & (washWay == "delete") ) {
