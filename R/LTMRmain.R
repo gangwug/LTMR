@@ -47,8 +47,9 @@ LTMprep <- function(prepD, quantNorm = TRUE, uniStyle = "mad", removeLowQuant = 
       dplyr::group_by(geneSym)  %>%
       dplyr::mutate( rowNum = length(geneSym) ) %>%
       as.data.frame()
-    uniD = dplyr::filter(inputD, rowNum == 1)
-    multiD = dplyr::filter(inputD, rowNum > 1) %>%
+    multiD = dplyr::filter(inputD, rowNum > 1) 
+    if (nrow(multiD))  {
+      multiD = multiD %>%
       split(.$geneSym) %>%
       purrr::map( function(zD) {
         zoutD = zD %>%
@@ -57,8 +58,12 @@ LTMprep <- function(prepD, quantNorm = TRUE, uniStyle = "mad", removeLowQuant = 
         return(zoutD)
       } ) %>% bind_rows() %>%
       as.data.frame()
-    outD = dplyr::bind_rows(uniD, multiD[,colnames(uniD)]) %>%
+      uniD = dplyr::filter(inputD, rowNum == 1)
+      outD = dplyr::bind_rows(uniD, multiD[,colnames(uniD)]) %>%
       dplyr::select(-rowNum)
+    }  else {
+      outD = dplyr::select(inputD, -rowNum)
+    } 
   }  else if (tolower(uniStyle) == "mad") {
     outD =  dplyr::mutate(inputD, sdv=apply(inputD[,-1], 1, sd), madv=apply(inputD[,-1], 1, mad), index=1:nrow(inputD) ) %>%
       dplyr::filter(geneSym != "---" & geneSym != "" & !is.na(geneSym), sdv != 0) %>%
