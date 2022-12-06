@@ -41,10 +41,10 @@ LTMprep <- function(prepD, quantNorm = TRUE, uniStyle = "mad", removeLowQuant = 
   }
   ##remove redundant symbols
   if (tolower(uniStyle) == "sum") {
-    inputD = dplyr::group_by(inputD, geneSym)  %>%
-      dplyr::mutate( sdv = apply(inputD[,-1], 1, sd) ) %>%
+    inputD = dplyr::mutate(inputD, sdv = apply(inputD[,-1], 1, sd) ) %>%
       dplyr::filter(geneSym != "---" & geneSym != "" & !is.na(geneSym), sdv != 0) %>%
       dplyr::select(-sdv) %>%
+      dplyr::group_by(geneSym)  %>%
       dplyr::mutate( rowNum = length(geneSym) ) %>%
       as.data.frame()
     uniD = dplyr::filter(inputD, rowNum == 1)
